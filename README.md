@@ -59,4 +59,4 @@ This project uses the JSONPlaceholder API for demonstration and testing purposes
 
 ## Deployed Link
 
-The application is deployed and accessible [here]().
+The application is deployed and accessible [here](https://techniqueuserdashboard.netlify.app/).
