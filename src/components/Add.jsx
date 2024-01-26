@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { Input } from '@chakra-ui/react'
 export const Add = () => {
     const [user,setUser]=useState ({
         name:"",
@@ -38,12 +39,12 @@ const handleData=(e)=>{
   return (
     <div className='addForm'>
         <form onSubmit={handleData}>
-        <input type="text" value={user.name} placeholder='Enter Name' onChange={(e)=>{setUser({...user,name:e.target.value})}} />
-        <input type="text" value={user.username} placeholder='Enter UserName' onChange={(e)=>{setUser({...user,username:e.target.value})}}/>
-        <input type="text" value={user.email} placeholder='Enter Email' onChange={(e)=>{setUser({...user,email:e.target.value})}}/>
-        <input type="text" value={user.company.name} placeholder='Enter company' onChange={(e)=>{setUser({...user,company:{name:e.target.value}})}}/>
-        <input type="text" value={user.website} placeholder='Enter Website' onChange={(e)=>{setUser({...user,website:e.target.value})}}/>
-        <input type="text" value={user.phone} placeholder='Enter Phone Number' onChange={(e)=>{setUser({...user,phone:e.target.value})}}/>
+        <Input type="text" value={user.name} placeholder='Enter Name' onChange={(e)=>{setUser({...user,name:e.target.value})}} />
+        <Input type="text" value={user.username} placeholder='Enter UserName' onChange={(e)=>{setUser({...user,username:e.target.value})}}/>
+        <Input type="text" value={user.email} placeholder='Enter Email' onChange={(e)=>{setUser({...user,email:e.target.value})}}/>
+        <Input type="text" value={user.company.name} placeholder='Enter company' onChange={(e)=>{setUser({...user,company:{name:e.target.value}})}}/>
+        <Input type="text" value={user.website} placeholder='Enter Website' onChange={(e)=>{setUser({...user,website:e.target.value})}}/>
+        <Input type="text" value={user.phone} placeholder='Enter Phone Number' onChange={(e)=>{setUser({...user,phone:e.target.value})}}/>
         <input type='submit' value="Add User" className='Add'/>
         </form>
     </div>

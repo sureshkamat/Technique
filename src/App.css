@@ -47,7 +47,7 @@ img {
 }
 .loader{
   text-align: center;
-  
+
 }
 button {
   width: 80px;
@@ -127,6 +127,7 @@ input {
   width: 100%;
   height: 50px;
   font-size: 20px;
+  border-width: 1px solid;
 }
 
 @media screen and (min-width: 600px){
