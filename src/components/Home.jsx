@@ -1,6 +1,14 @@
+
+import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Spinner } from '@chakra-ui/react'
+import PersonIcon from '@mui/icons-material/Person';
+import BadgeIcon from '@mui/icons-material/Badge';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import BusinessIcon from '@mui/icons-material/Business';
 export const Home = () => {
     const [data, setData] = useState([]);
     const [limit, setLimit] = useState(4);
@@ -55,12 +63,17 @@ export const Home = () => {
                     <option value={10}>10</option>
                 </select>
             </div>
-         <div className="top">
-                
-            </div>
             {error && <h1>{error}</h1>}
-            {loading ? (
+            {loading ? (<div className="loader">
                 <h1>Loading....</h1>
+                <Spinner
+                    thickness='4px'
+                    speed='0.65s'
+                    emptyColor='gray.200'
+                    color='blue.500'
+                    size='xl'
+                />
+            </div>
             ) : (
                 <div className="box">
                     {data.map((el) => (
@@ -69,12 +82,26 @@ export const Home = () => {
                                 src="https://tse2.mm.bing.net/th/id/OIP.awAiMS1BCAQ2xS2lcdXGlwHaHH?rs=1&pid=ImgDetMain"
                                 alt="Avatar"
                             />
-                            <h2>Id : {el.id}</h2>
-                            {/* <h2>Name : {el.name}</h2> */}
-                            <h2>First Name: {el.name.split(' ')[0]}</h2>
-                            <h2>Last Name: {el.name.split(' ').slice(1).join(' ')}</h2>
-                            <h4>Email : {el.email}</h4>
-                            <h5>Company : {el.company.name}</h5>
+                            <div style={{ display: 'flex', alignItems: 'center', fontSize: '25px' }}>
+                                <BadgeIcon style={{ marginRight: '4px',fontWeight: 'bold', color: 'black' }} />
+                                : {el.id}
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <PersonIcon style={{ marginRight: '9px',fontWeight: 'bold', color: 'black', fontSize: 'large' }} />
+                                : {el.name}
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <EmailIcon style={{ marginRight: '9px',fontWeight: 'bold', color: 'black', fontSize: 'large' }} />
+                                : {el.email}
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <PhoneIcon style={{ marginRight: '9px',fontWeight: 'bold', color: 'black', fontSize: 'large' }} />
+                                : {el.phone.split(' ')[0]}
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <BusinessIcon style={{ marginRight: '9px',fontWeight: 'bold', color: 'black', fontSize: 'large' }} />
+                                : {el.company.name}
+                            </div>
                             <Link to={`/edit/${el.id}`} ><button className="edit" >Edit</button></Link>
                             <button onClick={() => handleDelete(el.id)} className="delete">Delete</button>
                         </div>
@@ -83,16 +110,16 @@ export const Home = () => {
             )}
 
             <div className="buttonbox">
-                <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+                <Button colorScheme='teal' variant='outline' onClick={() => setPage(page - 1)} isDisabled={page === 1}>
                     Prev
-                </button>
-                <button>{page}</button>
-                <button
+                </Button>
+                <Button colorScheme='teal' variant='outline' >{page}</Button>
+                <Button colorScheme='teal' variant='outline'
                     onClick={() => setPage(page + 1)}
-                    disabled={page === Math.ceil(10 / limit)}
+                    isDisabled={page === Math.ceil(10 / limit)}
                 >
                     Next
-                </button>
+                </Button>
             </div>
         </div>
     );

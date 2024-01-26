@@ -42,7 +42,7 @@ export const Edit = () => {
     console.log(user);
     return (
         <div className='addForm'>
-            <h3>Update Details of UserId : {id}  Here or <Link to="/">Go Back</Link></h3>
+            <h3>Update Details of UserId : {id}  Here or <Link to="/"><button>Go Back</button></Link></h3>
             <form onSubmit={handleEdit}>
                 <input type="text" value={user.name} placeholder='Enter Name' onChange={(e) => { setUser({ ...user, name: e.target.value }) }} />
                 <input type="text" value={user.username} placeholder='Enter UserName' onChange={(e) => { setUser({ ...user, username: e.target.value }) }} />
