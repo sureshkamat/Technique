@@ -10,6 +10,7 @@ This project uses the JSONPlaceholder API for demonstration and testing purposes
 - Edit existing user details.
 - Add new users with a form.
 - Delete users.
+- Limit for the user list.
 - Pagination for the user list.
 - Responsive design.
 
@@ -41,6 +42,9 @@ This project uses the JSONPlaceholder API for demonstration and testing purposes
 - **View Users:**
   The Home dashboard displays a list of users with their details.
 
+- **Limit View:**
+  Click the "Limit View" options to change number of list in a single view.
+  
 - **Add User:**
   Click the "Add" button to open the form and add a new user.
 
