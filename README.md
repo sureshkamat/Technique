@@ -32,6 +32,9 @@ This project uses the JSONPlaceholder API for demonstration and testing purposes
 
 1. **Access the User Dashboard:**
    run command npm run start
+    ```bash
+   npm run start
+   ```
 
 # Usage Instructions
 
