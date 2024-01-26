@@ -54,13 +54,6 @@ export const Home = () => {
                     <option value={5}>5</option>
                     <option value={10}>10</option>
                 </select>
-                <select onChange={(e) => setLimit(e.target.value)}>
-                    <option value={4}>Limit view</option>
-                    <option value={2}>2</option>
-                    <option value={4}>4</option>
-                    <option value={5}>5</option>
-                    <option value={10}>10</option>
-                </select>
             </div>
          <div className="top">
                 
